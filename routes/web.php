@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,3 +24,8 @@ Route::resource('contacts',contactController::class)->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('profile',[userController::class,"profile"]);
+Route::get('editprofile/{id}',[userController::class,"editprofile"]);
+Route::put('updateprofile/{id}',[userController::class,"updateprofile"]);
+Route::delete('deleteprofile/{id}',[userController::class,"deleteprofile"]);
+Route::get('testing',[userController::class,"testing"]);

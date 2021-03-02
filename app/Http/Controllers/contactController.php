@@ -19,6 +19,7 @@ class contactController extends Controller
         $contacts = contact::where('userID', $id)->orderBy("id", "desc")->paginate(10);
         return view('show', ['contacts' => $contacts]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
